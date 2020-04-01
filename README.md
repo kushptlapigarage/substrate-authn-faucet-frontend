@@ -1,1 +1,1 @@
-# substrate-authorized-faucet-frontend
+# Substrate Authenticated Faucet Frontend
