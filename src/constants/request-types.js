@@ -1,0 +1,14 @@
+export const SEND = 'SEND';
+export const SIGN = 'SIGN';
+export const ENABLE = 'ENABLE';
+export const SIGN_MESSAGE = 'SIGN_MESSAGE';
+export const CONTRACT_CALL = 'CONTRACT_CALL';
+export const CONTRACT_READ = 'CONTRACT_READ';
+export const ERC20_SEND = 'ERC20_SEND';
+export const ERC777_SEND = 'ERC777_SEND';
+export const GET_ACCOUNTS = 'GET_ACCOUNTS';
+export const GET_ALL_ACCOUNTS = 'GET_ALL_ACCOUNTS';
+export const GET_BALANCE = 'GET_BALANCE';
+export const CHANGE_ACCOUNT = 'CHANGE_ACCOUNT';
+export const SELECT_ACCOUNT = 'SELECT_ACCOUNT';
+export const SIGN_TXN = 'SIGN_TXN';

@@ -1,0 +1,78 @@
+@import "../../css/utils.scss";
+
+.header {
+  -webkit-print-color-adjust: exact; 
+  min-height: 40px;
+  display: flex;
+  background: $darkest-green;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  color: $white;
+  h1 {
+    font-family:  $font-family;
+    font-size: $font-size-mobile-h2;
+  }
+}
+.logo {
+  font-weight: bold;
+  background: $darkest-green;
+  color: $white;
+  border: 0;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  min-width:10%;
+  width:10%;
+  text-align: left;
+}
+.root {
+  flex-grow: 1;
+}
+.menu-button{
+  margin-right: 5px;
+}
+.title {
+  flex-grow: 1;
+  font-family:  $font-family;
+  font-size: $font-size-mobile-h2;
+  color: $white !important;
+}
+
+.search {
+  position: relative;
+  border-radius: 5px;
+  background-color: $white;
+  margin-left: 0px;
+  width: 20%;
+}
+
+.search-icon {
+  color: $black;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-root {
+  color: inherit;
+  padding-left: 35px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.input-input {
+  width: 100%;
+}
+
+@media print {
+  .root,
+  #non-printable {
+      display: none !important;
+  }
+}
