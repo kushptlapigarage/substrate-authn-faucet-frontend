@@ -3,9 +3,10 @@ import { withRouter } from 'react-router-dom';
 import Router from './router';
 // routes
 import home from '../pages/home/home.routes';
+import signup from '../pages/signup/signup.routes';
 
 export const mapStateToProps = () => ({
-  routes: [...home]
+  routes: [...home, ...signup]
 });
 
 const mapDispatchToProps = {};

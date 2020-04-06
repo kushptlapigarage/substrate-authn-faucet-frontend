@@ -88,22 +88,22 @@ class SelectOption extends Component {
 
     return (
       <Box wrap align="center" width="medium">
-          <Select
-            {...otherProps}
-            id={id}
-            disabled={isDisabled}
-            value={value}
-            variant={variant}
-            showError={showError}
-            options={options}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur}
-            placeholder={placeholder}
-            label={label}
-            className={className}
-            margin="normal"
-          />
-          <InputError errors={errors} currentError={currentError} />
+        <Select
+          {...otherProps}
+          id={id}
+          disabled={isDisabled}
+          value={value}
+          variant={variant}
+          showError={showError}
+          options={options}
+          onChange={this.handleChange}
+          onBlur={this.handleBlur}
+          placeholder={placeholder}
+          label={label}
+          className={className}
+          margin="normal"
+        />
+        <InputError errors={errors} currentError={currentError} />
       </Box>
     );
   }

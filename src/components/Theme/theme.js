@@ -162,7 +162,7 @@ const custom = {
   },
   select: {
     control: {
-      extend: `padding: 3px 6px; border: none; 
+      extend: `border: none; border-radius: 0px !important;
               border-bottom: ${borderWidth}px solid black;
               color: black;
               height: 100%
