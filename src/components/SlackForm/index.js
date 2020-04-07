@@ -1,6 +1,6 @@
-import React from "react";
-import { TextInput, Button, Paragraph } from "grommet";
-import styled from "styled-components";
+import React from 'react';
+import { TextInput, Button, Paragraph } from 'grommet';
+import styled from 'styled-components';
 
 const FormWrapper = styled.div`
   display: grid;
@@ -15,21 +15,21 @@ class SlackForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      response: "",
+      email: '',
+      response: '',
       submitted: false,
       submitDisabled: false
     };
   }
 
   returnMessage = response => {
-    if (response.ok) return "An invitation has been sent to your inbox!";
+    if (response.ok) return 'An invitation has been sent to your inbox!';
 
     const notification = {
-      already_invited: "It seems that you've been invited already...",
-      already_in_team: "It seems that you've been in this team already...",
-      user_disabled: "Your account has been disabled",
-      invalid_email: "Your email adress is invalid"
+      already_invited: 'It seems that you\'ve been invited already...',
+      already_in_team: 'It seems that you\'ve been in this team already...',
+      user_disabled: 'Your account has been disabled',
+      invalid_email: 'Your email adress is invalid'
     };
 
     return notification[response.error];
@@ -40,9 +40,9 @@ class SlackForm extends React.Component {
 
     this.setState({ submitDisabled: true });
 
-    fetch(`/.netlify/functions/getSlackInvite`, {
-      method: "POST",
-      mode: "same-origin",
+    fetch('/.netlify/functions/getSlackInvite', {
+      method: 'POST',
+      mode: 'same-origin',
       body: JSON.stringify({
         email: this.state.email
       })

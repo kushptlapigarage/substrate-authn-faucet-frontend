@@ -1,16 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Heading, Paragraph } from 'grommet';
+// import styled from 'styled-components';
+import { Box, Heading, Paragraph } from 'grommet';
 
 import Grid from '../Grid';
 import Column from '../Column';
 import Container from '../Container';
 import FullWidthContainer from '../FullWidthContainer';
 
-import tinlake_flow_desktop_img from '../../images/tinlake/tinlake-flow-desktop.svg';
-import tinlake_flow_mobile_img from '../../images/tinlake/tinlake-flow-mobile.svg';
+// import tinlake_flow_desktop_img from '../../images/tinlake/tinlake-flow-desktop.svg';
+// import tinlake_flow_mobile_img from '../../images/tinlake/tinlake-flow-mobile.svg';
 
-export default function WhatIsTinlake() {
+export default function HowDoesFaucetWork() {
   return (
     <>
       <Container>
@@ -29,10 +29,14 @@ export default function WhatIsTinlake() {
       <FullWidthContainer>
         <Grid noMargin pt='50px' pb='50px'>
           <Column mobileHide justifySelf='stretch'>
-            <Image src={tinlake_flow_desktop_img} />
+            <Box pad="large" background="brand" round="full" alignSelf="center">
+            Centrifuge
+            </Box>
           </Column>
           <Column tabletHide justifySelf='stretch'>
-            <Image src={tinlake_flow_mobile_img} />
+            <Box pad="large" background="brand" round="full" alignSelf="center">
+            Centrifuge
+            </Box>
           </Column>
         </Grid>
       </FullWidthContainer>
@@ -46,9 +50,9 @@ const data = {
     'Tinlake is a asset-backed lending smart contract platform that is designed for Asset Originators like lending platforms, payment companies, embedded software solutions, and banks that seek to utilize the full potential of decentralized finance. The protocol coordinates the various parties required to structure, administer, and finance collateralized pools of financial obligations like invoices, mortgages, auto loans, or royalties. By simplifying the process and reducing costs, Tinlake’s protocol creates financing flexibility for Asset Originators allowing them to optimize risk allocation and access instant funding from a new category of crypto lending protocols while simultaneously improving transparency and accessibility for their traditional investors.'
 };
 
-const Image = styled.img`
-  @media only screen and (max-width: 768px) {
-    width: 30%;
-    margin: 0 auto;
-  }
-`;
+// const Image = styled.img`
+//   @media only screen and (max-width: 768px) {
+//     width: 30%;
+//     margin: 0 auto;
+//   }
+// `;

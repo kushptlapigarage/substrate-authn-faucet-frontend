@@ -6,14 +6,8 @@ import PropTypes from 'prop-types';
 import { getCurrentError } from './helpers.js';
 import inputErrors from '../../../utils/input-errors';
 
-// Components
-// import DefaultInput from './components/default-input.js';
-// import Label from './components/label.js';
 import InputError from './components/input-error.js';
-import { TextInput, Box, Text } from 'grommet';
-
-// Styles
-import styles from './input.module.scss';
+import { TextInput, Box } from 'grommet';
 
 class Input extends Component {
   constructor(props) {
@@ -98,24 +92,24 @@ class Input extends Component {
 
     return (
       <Box wrap align="center" width="medium">
-          <TextInput
-            {...otherProps}
-            signup
-            dark
-            id={id}
-            disabled={isDisabled}
-            type={type}
-            value={value}
-            variant={variant}
-            showError={showError}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur}
-            placeholder={placeholder}
-            label={label}
-            className={className}
-            margin="normal"
-          />
-          <InputError errors={errors} currentError={currentError} />
+        <TextInput
+          {...otherProps}
+          signup
+          dark
+          id={id}
+          disabled={isDisabled}
+          type={type}
+          value={value}
+          variant={variant}
+          showError={showError}
+          onChange={this.handleChange}
+          onBlur={this.handleBlur}
+          placeholder={placeholder}
+          label={label}
+          className={className}
+          margin="normal"
+        />
+        <InputError errors={errors} currentError={currentError} />
       </Box>
     );
   }

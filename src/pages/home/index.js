@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Container from '../../components/Container';
-import Hero from '../../components/FaucetHero';
+import FaucetHero from '../../components/FaucetHero';
+import HowDoesFaucetWork from '../../components/HowDoesFaucetWork';
+import Disclaimer from '../../components/Disclaimer';
 
 class Home extends Component {
   render() {
     return (
       <Container>
-        <Hero />
+        <FaucetHero />
+        <HowDoesFaucetWork />
+        <Disclaimer />
       </Container>
     );
   }

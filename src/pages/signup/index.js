@@ -43,6 +43,7 @@ class Signup extends Component {
     const {
       signupForm: { forceValidation, reset, form },
       updateField,
+      error
     } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
@@ -171,6 +172,13 @@ class Signup extends Component {
                   label="Press to Pour" 
                   type='submit'/>
               </Box>
+              {error && 
+              <Box pad={{ top: 'small', left: 'medium' }} align="start" gap="large">
+                <Box direction="row" wrap align="start" gap="large">
+                  <Text style={{ color: 'red' }}>{error.message}</Text>
+                </Box>
+              </Box>
+              }
             </Column>
           </Grid>
         </FormWrapper>
@@ -181,6 +189,7 @@ class Signup extends Component {
 
 const mapStateToProps = state => ({
   signupForm: state.signupReducer.signupForm,
+  error: state.signupReducer.error
 });
 
 const mapDispatchToProps = {

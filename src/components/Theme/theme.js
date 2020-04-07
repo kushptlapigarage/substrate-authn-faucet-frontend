@@ -96,7 +96,8 @@ const custom = {
       Documentation: '#94FFED',
       Design: '#FF85C9',
       'Code Review': '#FFCE9E',
-      Other: '#C2DBFF'
+      Other: '#C2DBFF',
+      placeholder: '#000'
     },
     
     breakpoints: { ...breakpoints },
@@ -143,6 +144,7 @@ const custom = {
               css`
                 font-weight: var(--fw-medium);
                 font-family: var(--f-stack);
+                font-size: 16px;
                 color: black;
                 border: none;
                 border-bottom: ${borderWidth}px solid
@@ -162,7 +164,8 @@ const custom = {
   },
   select: {
     control: {
-      extend: `border: none; border-radius: 0px !important;
+      extend: `
+              border: none; border-radius: 0px !important;
               border-bottom: ${borderWidth}px solid black;
               color: black;
               height: 100%
@@ -342,11 +345,11 @@ const custom = {
       /* Button Hover Styles */
       &:hover {
         box-shadow: none;
-        border-color: #2762FF;
+        border-color: #000;
 
         ${!props.primary &&
           css`
-            color: #2762ff;
+            color: #000;
           `}
       }
 

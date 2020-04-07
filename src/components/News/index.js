@@ -1,10 +1,10 @@
-import React from "react";
-import { Heading, Paragraph, Image, Box, Button } from "grommet";
-import styled from "styled-components";
+import React from 'react';
+import { Heading, Paragraph, Image, Box, Button } from 'grommet';
+import styled from 'styled-components';
 
-import { ExternalLink } from "../Links";
-import Column, { Spacer } from "../Column";
-import Grid from "../Grid";
+import { ExternalLink } from '../Links';
+import Column, { Spacer } from '../Column';
+import Grid from '../Grid';
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -35,7 +35,7 @@ const NewsCard = ({ link, children }) => (
       pad=""
       round="xsmall"
       elevation="medium"
-      margin={{ bottom: "large" }}
+      margin={{ bottom: 'large' }}
     >
       {children}
     </Box>
@@ -44,15 +44,15 @@ const NewsCard = ({ link, children }) => (
 
 const CardImage = ({ src }) => (
   <Box
-    round={{ corner: "top", size: "xsmall" }}
+    round={{ corner: 'top', size: 'xsmall' }}
     height="200px"
     width="100%"
     justify="center"
     style={{
       backgroundImage: `url("${src}")`,
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover"
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
     }}
   />
 );
@@ -63,11 +63,11 @@ const LinkedMediumImage = ({ imageId, slug, highlight }) => (
       style={
         !highlight
           ? {
-              width: "100%",
-              paddingTop: "50%",
-              margin: "0",
-              overflow: "hidden"
-            }
+            width: '100%',
+            paddingTop: '50%',
+            margin: '0',
+            overflow: 'hidden'
+          }
           : {}
       }
     >
@@ -75,18 +75,18 @@ const LinkedMediumImage = ({ imageId, slug, highlight }) => (
         style={
           !highlight
             ? {
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: "100%",
-                zIndex: 1
-              }
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '100%',
+              zIndex: 1
+            }
             : {
-                maxWidth: "100%",
-                verticalAlign: "middle",
-                zIndex: 1
-              }
+              maxWidth: '100%',
+              verticalAlign: 'middle',
+              zIndex: 1
+            }
         }
         src={imageId}
       />
@@ -98,7 +98,7 @@ const PressArticle = ({ article }) => (
   <Box direction="row-responsive" gap="large">
     <Box basis="1/4">
       <Image
-        style={{ width: "100%", maxWidth: 128 }}
+        style={{ width: '100%', maxWidth: 128 }}
         src={article.agency.logo.file.url}
         alt={article.agency.logo.file.fileName}
       />
@@ -114,19 +114,9 @@ const PressArticle = ({ article }) => (
   </Box>
 );
 
-const stripHtml = html => {
-  var tmp = document.createElement("DIV");
-  tmp.innerHTML = html;
-  return tmp.textContent || tmp.innerText || "";
-};
-
-const truncate = (desc, length = 120) => {
-  return `${String(desc).substring(0, length)}...`;
-};
-
 const MediumPost = ({ post }) => (
   <>
-    <Box margin={{ bottom: "medium" }}>
+    <Box margin={{ bottom: 'medium' }}>
       <LinkedMediumImage imageId={post.thumbnail} slug={post.link} />
     </Box>
     <PostInfo
@@ -141,7 +131,7 @@ const MediumPost = ({ post }) => (
 const HighlightPost = ({ post }) => (
   <Grid mt="" mb="large" justify="" align="flex-start">
     <Column span={{ medium: 10, large: 6 }}>
-      <Box margin={{ bottom: "medium" }}>
+      <Box margin={{ bottom: 'medium' }}>
         <LinkedMediumImage
           highlight
           imageId={post.thumbnail}
@@ -162,10 +152,10 @@ const HighlightPost = ({ post }) => (
 
 const PostInfo = ({ title, subtitle, link, heading }) => (
   <LinkWrapper target="_blank" rel="noopener noreferrer" href={link}>
-    <Heading level={heading || "1"} lined={heading !== "3" ? true : false}>
+    <Heading level={heading || '1'} lined={heading !== '3' ? true : false}>
       {title}
     </Heading>
-    <Paragraph margin={{ bottom: "medium" }}>{subtitle}</Paragraph>
+    <Paragraph margin={{ bottom: 'medium' }}>{subtitle}</Paragraph>
     <Button plain target="_blank" rel="noopener noreferrer" href={link}>
       Read more...
     </Button>
@@ -183,9 +173,9 @@ const LatestNews = ({ posts }) => (
             align="center"
             height="96px"
             pad={{
-              horizontal: "medium",
-              top: "medium",
-              bottom: "0px"
+              horizontal: 'medium',
+              top: 'medium',
+              bottom: '0px'
             }}
           >
             <Heading level={3} margin="0px">
@@ -197,9 +187,9 @@ const LatestNews = ({ posts }) => (
             align="center"
             height="96px"
             pad={{
-              horizontal: "medium",
-              top: "medium",
-              bottom: "0px"
+              horizontal: 'medium',
+              top: 'medium',
+              bottom: '0px'
             }}
           >
             <Paragraph margin="0px">{post.description}</Paragraph>

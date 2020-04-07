@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import Image from "gatsby-image";
+import React from 'react';
+import styled from 'styled-components';
+import Image from 'gatsby-image';
 
-import { TwitterSquare } from "styled-icons/fa-brands/TwitterSquare";
-import { Medium } from "styled-icons/fa-brands/Medium";
-import { Linkedin } from "styled-icons/fa-brands/Linkedin";
-import { GithubSquare } from "styled-icons/fa-brands/GithubSquare";
+import { TwitterSquare } from 'styled-icons/fa-brands/TwitterSquare';
+import { Medium } from 'styled-icons/fa-brands/Medium';
+import { Linkedin } from 'styled-icons/fa-brands/Linkedin';
+import { GithubSquare } from 'styled-icons/fa-brands/GithubSquare';
 
-import { ExternalLink } from "../Links";
-import { Box } from "grommet";
+import { ExternalLink } from '../Links';
+import { Box } from 'grommet';
 
 const Name = styled.p`
   font-weight: var(--fw-medium);
@@ -50,7 +50,7 @@ const VIP = ({
       socialMediaLinkedIn ||
       socialMediaGitHub ||
       socialMediaMedium) && (
-      <Box direction="row" gap="small" style={{ color: "black" }}>
+      <Box direction="row" gap="small" style={{ color: 'black' }}>
         {socialMediaTwitter && (
           <ExternalLink href={socialMediaTwitter}>
             <TwitterSquare color="rgba(0, 0, 0, 0.5)" size={20} />

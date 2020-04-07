@@ -87,21 +87,21 @@ class CheckBoxInput extends Component {
 
     return (
       <Box wrap align="center" width="medium">
-          <CheckBox
-            {...otherProps}
-            id={id}
-            disabled={isDisabled}
-            value={value}
-            variant={variant}
-            showError={showError}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur}
-            placeholder={placeholder}
-            label={label}
-            className={className}
-            margin="normal"
-          />
-          <InputError errors={errors} currentError={currentError} />
+        <CheckBox
+          {...otherProps}
+          id={id}
+          disabled={isDisabled}
+          value={value}
+          variant={variant}
+          showError={showError}
+          onChange={this.handleChange}
+          onBlur={this.handleBlur}
+          placeholder={placeholder}
+          label={label}
+          className={className}
+          margin="normal"
+        />
+        <InputError errors={errors} currentError={currentError} />
       </Box>
     );
   }
