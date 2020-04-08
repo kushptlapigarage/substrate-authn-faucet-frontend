@@ -3,7 +3,8 @@ import { push } from 'connected-react-router';
 import App from './app';
 
 const mapStateToProps = state => ({
-  router: state.router
+  router: state.router,
+  isLoading: state.signupReducer.isLoading
 });
 
 const mapDispatchToProps = {

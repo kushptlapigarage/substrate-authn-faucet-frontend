@@ -2,6 +2,7 @@ import * as types from './actionTypes.js';
 
 export const defaultState = {
   isSubmitting: false,
+  isLoading: false,
   success: null,
   error: null,
   signupForm: {
@@ -34,6 +35,7 @@ const reducer = (state = defaultState, action) => {
       ...state,
       isSubmitting: true,
       error: null,
+      isLoading: true,
       signupForm: {
         ...state.signupForm,
         ...{
@@ -45,6 +47,7 @@ const reducer = (state = defaultState, action) => {
     return {
       ...state,
       isSubmitting: false,
+      isLoading: false,
       success: action.response,
       error: null,
       signupForm: {
@@ -59,6 +62,7 @@ const reducer = (state = defaultState, action) => {
     return {
       ...state,
       isSubmitting: false,
+      isLoading: false,
       success: null,
       error: action.error,
       signupForm: {
