@@ -78,7 +78,6 @@ class Input extends Component {
       className,
       id,
       label,
-      // labelColor,
       isDisabled,
       type,
       value,

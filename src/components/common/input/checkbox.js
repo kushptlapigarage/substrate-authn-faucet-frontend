@@ -66,7 +66,7 @@ class CheckBoxInput extends Component {
 
     const error = getCurrentError(value, errors);
     this.setState({ currentError: error });
-    onInputChange(value.target.value, error);
+    onInputChange(value.target.checked, error);
   }
 
   render() {

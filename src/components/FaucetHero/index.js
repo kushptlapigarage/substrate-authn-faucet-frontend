@@ -6,7 +6,7 @@ import Grid from '../Grid';
 import Column from '../Column';
 import FullWidthContainer from '../FullWidthContainer';
 
-export default function FaucetHero() {
+export default function FaucetHero({ handleGithubLogin, stateError }) {
   return (
     <FullWidthContainer>
       <Grid noMargin pt="50px" pb="50px">
@@ -21,7 +21,8 @@ export default function FaucetHero() {
         <Column span={{ medium: 5, large: 5 }} textAlign="center">
           <Content>
             <Heading level={1}>{data.heading}</Heading>
-            <Button primary label="Login with Github" />
+            <Button primary label="Login with Github" onClick={handleGithubLogin}/>
+            <Paragraph style={{ color: 'red' }} pad={{ top: 'xxsmall', left: 'medium' }}>{stateError}</Paragraph>
             <Paragraph pad={{ top: 'xxsmall', left: 'medium' }}>{data.paragraph}</Paragraph>
           </Content>
         </Column>

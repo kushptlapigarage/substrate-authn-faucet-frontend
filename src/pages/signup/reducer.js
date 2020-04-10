@@ -13,12 +13,15 @@ export const defaultState = {
       company_name: '',
       country: '',
       us_citizen: '', 
-      chain_address: '',
+      address: '',
       email:'',
-      termAccepted: false,
+      toc_and_privacy: false,
+      code:'',
+      auth_type: 'github',
+      state:''
     },
     isValidForm: {
-      chain_address: false,
+      address: false,
     }
   }
 };

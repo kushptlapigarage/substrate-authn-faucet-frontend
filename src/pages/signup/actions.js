@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import { signup } from './api';
+import { getLocalStorage, setLocalStorage } from '../../services/browser.service';
 
 const updateFormField = updatedTransactionsForm => ({
   type: types.SIGNUP_UPDATE_FORM_FIELD,
@@ -70,9 +71,12 @@ export const signupRequest = () => {
           company_name: form.company_name,
           country: form.country,
           us_citizen: form.us_citizen,
-          chain_address: form.chain_address,
+          address: form.address,
+          email: form.email,
+          toc_and_privacy: form.toc_and_privacy,
+          auth_type: form.auth_type
         };
-        const response = await signup(data);
+        const response = await signup(data, form.code);
         dispatch(signupSuccess(response));
       } else {
         dispatch(signupError());
@@ -84,3 +88,13 @@ export const signupRequest = () => {
   };
 };
   
+export const getRandomString = async () => {
+  const randomString = await getLocalStorage('randomString');
+  return randomString;
+};
+  
+export const setStateError = (stateError) => {
+  return async () => {
+    await setLocalStorage('stateError', stateError);
+  };
+};

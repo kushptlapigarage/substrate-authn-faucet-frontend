@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Heading, Box, Button, Text } from 'grommet';
+import queryString from 'query-string';
 import styled from 'styled-components';
+import { push } from 'connected-react-router';
 import Column from '../../components/Column';
 import Grid from '../../components/Grid';
-import { signupRequest, updateField } from './actions';
+import { signupRequest, updateField, getRandomString, setStateError } from './actions';
 import Input from '../../components/common/input/input.js';
 import SelectOption from '../../components/common/input/select.js';
 import CheckBoxInput from '../../components/common/input/checkbox.js';
@@ -19,13 +21,25 @@ const FormWrapper = styled.div`
 `;
 
 class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checkBox: true,
-    };
+
+  componentDidMount() {
+    const values = queryString.parse(this.props.location.search);
+    const { updateField } = this.props;
+    updateField('code', values.code);
+    if(values && values.state) {
+      this.validateState(values.state);
+    }
   }
 
+  async validateState (state) {
+    const randomString = await getRandomString();
+    if(state !== randomString) {
+      const { push, setStateError } = this.props;
+      await setStateError('Something went wrong please login again.');
+      push('/');
+    }
+  }
+  
   handleSubmit = async e => {
     e.preventDefault();
     const { signupRequest } = this.props;
@@ -43,7 +57,8 @@ class Signup extends Component {
     const {
       signupForm: { forceValidation, reset, form },
       updateField,
-      error
+      error,
+      success
     } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
@@ -90,7 +105,7 @@ class Signup extends Component {
                     <SelectOption
                       required
                       placeholder="Are you a US Citizen? *"
-                      options={['True', 'False']}
+                      options={['true', 'false']}
                       value={form.us_citizen}
                       forceValidation={forceValidation}
                       reset={reset}
@@ -102,7 +117,7 @@ class Signup extends Component {
                   </Box>
                   <Box wrap align="center" gap="medium" width="medium">
                     <Input
-                      type="text"
+                      type="email"
                       id='email'
                       value={form.email}
                       forceValidation={forceValidation}
@@ -127,14 +142,14 @@ class Signup extends Component {
                     />
                     <Input
                       type="text"
-                      id='chain_address'
-                      value={form.chain_address}
+                      id='address'
+                      value={form.address}
                       forceValidation={forceValidation}
                       reset={reset}
                       isRequired
                       placeholder='Centrifuge Chain Adress **'
                       onInputChange={(value, error) => {
-                        updateField('chain_address', value, error);
+                        updateField('address', value, error);
                       }}
                     />
                   </Box>
@@ -143,15 +158,14 @@ class Signup extends Component {
 
               <Box wrap pad={{ top: 'medium', left: 'medium' }} align="start" gap="large">
                 <CheckBoxInput
-                  id='termAccepted'
+                  id='toc_and_privacy'
                   label="You agree to the Terms of Service and the Privacy Policy"
-                  value={form.termAccepted}
+                  value={form.toc_and_privacy}
                   isRequired
-                  // errorMessage={'Must accept the warnning.'}
                   reset={reset}
                   forceValidation={forceValidation}
                   onInputChange={(value, error) => {
-                    updateField('termAccepted', value, error);
+                    updateField('toc_and_privacy', value, error);
                   }}
                 />
               </Box>
@@ -172,13 +186,12 @@ class Signup extends Component {
                   label="Press to Pour" 
                   type='submit'/>
               </Box>
-              {error && 
               <Box pad={{ top: 'small', left: 'medium' }} align="start" gap="large">
                 <Box direction="row" wrap align="start" gap="large">
-                  <Text style={{ color: 'red' }}>{error.message}</Text>
+                  {error && <Text style={{ color: 'red' }}>{error.message}</Text> }
+                  {success && <Text style={{ color: 'green' }}>{success.data.message}</Text> }
                 </Box>
               </Box>
-              }
             </Column>
           </Grid>
         </FormWrapper>
@@ -190,12 +203,16 @@ class Signup extends Component {
 
 const mapStateToProps = state => ({
   signupForm: state.signupReducer.signupForm,
-  error: state.signupReducer.error
+  error: state.signupReducer.error,
+  success: state.signupReducer.success
 });
 
 const mapDispatchToProps = {
   signupRequest,
-  updateField
+  updateField,
+  getRandomString,
+  push,
+  setStateError
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);
