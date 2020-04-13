@@ -1,6 +1,7 @@
 import * as types from './actionTypes';
 import { signup } from './api';
 import { getLocalStorage, setLocalStorage } from '../../services/browser.service';
+import * as contryList from '../../lib/json/country-list.json';
 
 const updateFormField = updatedTransactionsForm => ({
   type: types.SIGNUP_UPDATE_FORM_FIELD,
@@ -69,7 +70,7 @@ export const signupRequest = () => {
         const data = {
           full_name: form.full_name,
           company_name: form.company_name,
-          country: form.country,
+          country: form.country.value,
           us_citizen: form.us_citizen,
           address: form.address,
           email: form.email,
@@ -98,3 +99,13 @@ export const setStateError = (stateError) => {
     await setLocalStorage('stateError', stateError);
   };
 };
+
+export const getCountryList = () => {
+  return async () => {
+    const contries = contryList.default.map(c => {
+      return { value: c.ISO, label: c.COUNTRY};
+    });
+    return contries;
+  };
+};
+  

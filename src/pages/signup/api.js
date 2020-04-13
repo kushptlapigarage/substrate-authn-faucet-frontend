@@ -8,7 +8,7 @@ export const signup = async (data, code) => {
     return response;
   } catch (e) {
     if (e.response) {
-      throw new Error(e.error || e.response.data.message);
+      throw new Error(e.error || e.response.data.mesage);
     }
     else {
       throw new Error(e.error || e.message);

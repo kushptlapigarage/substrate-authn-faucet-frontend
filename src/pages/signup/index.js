@@ -6,10 +6,12 @@ import styled from 'styled-components';
 import { push } from 'connected-react-router';
 import Column from '../../components/Column';
 import Grid from '../../components/Grid';
-import { signupRequest, updateField, getRandomString, setStateError } from './actions';
+import Success from '../../components/Success';
+import { signupRequest, updateField, getRandomString, setStateError, getCountryList } from './actions';
 import Input from '../../components/common/input/input.js';
 import SelectOption from '../../components/common/input/select.js';
 import CheckBoxInput from '../../components/common/input/checkbox.js';
+import { baseOptions } from '../../config';
 
 const FormWrapper = styled.div`
   display: grid;
@@ -22,9 +24,18 @@ const FormWrapper = styled.div`
 
 class Signup extends Component {
 
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      countryList: []
+    };
+  }
+
+  async componentDidMount() {
     const values = queryString.parse(this.props.location.search);
-    const { updateField } = this.props;
+    const { updateField, getCountryList } = this.props;
+    const countryList = await getCountryList();
+    this.setState({ countryList });
     updateField('code', values.code);
     if(values && values.state) {
       this.validateState(values.state);
@@ -60,6 +71,8 @@ class Signup extends Component {
       error,
       success
     } = this.props;
+
+    const { countryList } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <FormWrapper>
@@ -131,7 +144,8 @@ class Signup extends Component {
                       required
                       id="country"
                       placeholder="Country of Operation *"
-                      options={['One', 'Two']}
+                      options={countryList}
+                      labelKey="label"
                       value={form.country}
                       forceValidation={forceValidation}
                       reset={reset}
@@ -187,9 +201,9 @@ class Signup extends Component {
                   type='submit'/>
               </Box>
               <Box pad={{ top: 'small', left: 'medium' }} align="start" gap="large">
-                <Box direction="row" wrap align="start" gap="large">
+                <Box direction="row" wrap align="start" gap="small">
                   {error && <Text style={{ color: 'red' }}>{error.message}</Text> }
-                  {success && <Text style={{ color: 'green' }}>{success.data.message}</Text> }
+                  {success && <Success success={success} polkascanUri={baseOptions.polkascanUri}></Success> }
                 </Box>
               </Box>
             </Column>
@@ -212,7 +226,8 @@ const mapDispatchToProps = {
   updateField,
   getRandomString,
   push,
-  setStateError
+  setStateError,
+  getCountryList
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);

@@ -74,7 +74,7 @@ class SelectOption extends Component {
       className,
       id,
       label,
-      // labelColor,
+      labelKey,
       isDisabled,
       value,
       placeholder,
@@ -85,13 +85,13 @@ class SelectOption extends Component {
 
     const { hasBlurred, isVirgin, currentError, errors } = this.state;
     const showError = hasBlurred && !isVirgin && currentError ? true : false;
-
     return (
       <Box wrap align="center" width="medium">
         <Select
           {...otherProps}
           id={id}
           disabled={isDisabled}
+          labelKey={labelKey}
           value={value}
           variant={variant}
           showError={showError}
