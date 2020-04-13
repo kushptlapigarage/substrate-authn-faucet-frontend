@@ -203,9 +203,9 @@ class Signup extends Component {
               <Box pad={{ top: 'small', left: 'medium' }} align="start" gap="large">
                 <Box direction="row" wrap align="start" gap="small">
                   {error && <Text style={{ color: 'red' }}>{error.message}</Text> }
-                  {success && <Success success={success} polkascanUri={baseOptions.polkascanUri}></Success> }
                 </Box>
               </Box>
+              {success && <Success success={success} polkascanUri={baseOptions.polkascanUri}></Success> }
             </Column>
           </Grid>
         </FormWrapper>
