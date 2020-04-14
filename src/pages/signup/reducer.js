@@ -3,12 +3,7 @@ import * as types from './actionTypes.js';
 export const defaultState = {
   isSubmitting: false,
   isLoading: false,
-  success: {
-    data: {
-      message: 'if you have Centrifuge Chain adress, create one using our documentation',
-      tx_hash: '123'
-    }
-  },
+  success: null,
   error: null,
   signupForm: {
     forceValidation: false,

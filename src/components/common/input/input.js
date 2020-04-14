@@ -16,7 +16,7 @@ class Input extends Component {
     this.state = {
       errors: props.isRequired
         ? [inputErrors.required].concat(props.extraErrors)
-        : props.extraErrors,
+        : [props.extraErrors],
       currentError: false,
       hasBlurred: false,
       isVirgin: true

@@ -1,4 +1,4 @@
-export const  makeRandomString = (length) => {
+export const makeRandomString = (length) => {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
@@ -9,3 +9,9 @@ export const  makeRandomString = (length) => {
 };
 
  
+export const sortByKey = (array, key) => {
+  return array.sort(function(a, b) {
+    var x = a[key]; var y = b[key];
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  });
+};

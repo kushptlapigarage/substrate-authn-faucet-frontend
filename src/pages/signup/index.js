@@ -12,6 +12,7 @@ import Input from '../../components/common/input/input.js';
 import SelectOption from '../../components/common/input/select.js';
 import CheckBoxInput from '../../components/common/input/checkbox.js';
 import { baseOptions } from '../../config';
+import inputErrors from '../../utils/input-errors';
 
 const FormWrapper = styled.div`
   display: grid;
@@ -27,7 +28,9 @@ class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      countryList: []
+      countryList: [],
+      usCitezenLookup: [{ label: 'Yes', value: true},
+        { label: 'No', value: false}]
     };
   }
 
@@ -57,13 +60,6 @@ class Signup extends Component {
     await signupRequest();
   }
   
-  handleChange = prop => e => {
-    const { value } = e.target;
-    this.setState({
-      [prop]: value
-    });
-  };
-
   render() {
     const {
       signupForm: { forceValidation, reset, form },
@@ -72,7 +68,7 @@ class Signup extends Component {
       success
     } = this.props;
 
-    const { countryList } = this.state;
+    const { countryList, usCitezenLookup } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <FormWrapper>
@@ -118,7 +114,8 @@ class Signup extends Component {
                     <SelectOption
                       required
                       placeholder="Are you a US Citizen? *"
-                      options={['true', 'false']}
+                      options={usCitezenLookup}
+                      labelKey="label"
                       value={form.us_citizen}
                       forceValidation={forceValidation}
                       reset={reset}
@@ -130,11 +127,12 @@ class Signup extends Component {
                   </Box>
                   <Box wrap align="center" gap="medium" width="medium">
                     <Input
-                      type="email"
+                      type="text"
                       id='email'
                       value={form.email}
                       forceValidation={forceValidation}
                       reset={reset}
+                      extraErrors={inputErrors.emailValidation}
                       placeholder='Email'
                       onInputChange={(value, error) => {
                         updateField('email', value, error);
@@ -159,6 +157,7 @@ class Signup extends Component {
                       id='address'
                       value={form.address}
                       forceValidation={forceValidation}
+                      extraErrors={inputErrors.addressValidation}
                       reset={reset}
                       isRequired
                       placeholder='Centrifuge Chain Adress **'
