@@ -9,7 +9,7 @@ const dev = {
 const prod = {
   API_HOST: 'http://localhost:8080',
   GITHUB_CLIENT_ID: 'a37026ceb8c0357f259f',
-  REDIRECT_URI: 'http://localhost:8000/github/callback',
+  REDIRECT_URI: 'http://centrifuge-demo.netlify.com/github/callback',
   POLKASCAN_URI: 'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
 const uat = {
