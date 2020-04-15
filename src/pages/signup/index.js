@@ -11,7 +11,7 @@ import { signupRequest, updateField, getRandomString, setStateError, getCountryL
 import Input from '../../components/common/input/input.js';
 import SelectOption from '../../components/common/input/select.js';
 import CheckBoxInput from '../../components/common/input/checkbox.js';
-import { baseOptions } from '../../config';
+import { config } from '../../config';
 import inputErrors from '../../utils/input-errors';
 
 const FormWrapper = styled.div`
@@ -53,13 +53,13 @@ class Signup extends Component {
       push('/');
     }
   }
-  
+
   handleSubmit = async e => {
     e.preventDefault();
     const { signupRequest } = this.props;
     await signupRequest();
   }
-  
+
   render() {
     const {
       signupForm: { forceValidation, reset, form },
@@ -194,9 +194,9 @@ class Signup extends Component {
                 </Box>
               </Box>
               <Box pad="medium" align="center" gap="large">
-                <Button 
-                  primary 
-                  label="Press to Pour" 
+                <Button
+                  primary
+                  label="Press to Pour"
                   type='submit'/>
               </Box>
               <Box pad={{ top: 'small', left: 'medium' }} align="start" gap="large">
@@ -204,12 +204,12 @@ class Signup extends Component {
                   {error && <Text style={{ color: 'red' }}>{error.message}</Text> }
                 </Box>
               </Box>
-              {success && <Success success={success} polkascanUri={baseOptions.polkascanUri}></Success> }
+              {success && <Success success={success} polkascanUri={config.POLKASCAN_URI}></Success> }
             </Column>
           </Grid>
         </FormWrapper>
       </form>
-      
+
     );
   }
 }

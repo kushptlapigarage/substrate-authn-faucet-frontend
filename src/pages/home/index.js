@@ -5,7 +5,7 @@ import FaucetHero from '../../components/FaucetHero';
 import HowDoesFaucetWork from '../../components/HowDoesFaucetWork';
 import Disclaimer from '../../components/Disclaimer';
 import { makeRandomString } from '../../utils/helpers';
-import { baseOptions } from '../../config';
+import { config } from '../../config';
 import { setRandomString, getStateError } from './actions';
 import { setStateError } from '../signup/actions';
 
@@ -32,9 +32,9 @@ class Home extends Component {
     console.log(randomString);
     const { setRandomString } = this.props;
     await setRandomString(randomString);
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${baseOptions.githubClientId}&redirect_uri=${baseOptions.redirectUri}&state=${randomString}`;
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${config.GITHUB_CLIENT_ID}&redirect_uri=${config.REDIRECT_URI}&state=${randomString}`;
   }
-  
+
   render() {
     const { stateError } = this.state;
     return (
