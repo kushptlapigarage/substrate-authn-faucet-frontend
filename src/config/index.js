@@ -2,14 +2,14 @@ const currentEnv = process.env.NODE_ENV;
 
 const dev = {
   API_HOST: 'http://localhost:8080',
-  GITHUB_CLIENT_ID: 'a37026ceb8c0357f259f',
+  GITHUB_CLIENT_ID: '9dffefab6a7f7cfd1efb',
   REDIRECT_URI: 'http://localhost:8000/github/callback',
   POLKASCAN_URI: 'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
 const prod = {
   API_HOST: 'http://localhost:8080',
-  GITHUB_CLIENT_ID: 'a37026ceb8c0357f259f',
-  REDIRECT_URI: 'http://centrifuge-demo.netlify.com/github/callback',
+  GITHUB_CLIENT_ID: 'bd96258260f769a56370',
+  REDIRECT_URI: 'https://centrifuge-demo.netlify.app/github/callback',
   POLKASCAN_URI: 'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
 const uat = {
@@ -47,10 +47,7 @@ const baseOptions = {
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json'
-  },
-  githubClientId: config.GITHUB_CLIENT_ID,
-  redirectUri: config.REDIRECT_URI,
-  polkascanUri: config.POLKASCAN_URI
+  }
 };
 
 export { currentEnv, config, baseOptions };
