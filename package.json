@@ -1,5 +1,5 @@
 {
-  "name": "dapp-ui",
+  "name": "substrate-authn-faucet-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
