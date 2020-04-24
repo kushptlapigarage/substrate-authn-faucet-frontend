@@ -10,6 +10,7 @@ import Success from '../../components/Success';
 import { signupRequest, updateField, getRandomString, setStateError, getCountryList } from './actions';
 import Input from '../../components/common/input/input.js';
 import SelectOption from '../../components/common/input/select.js';
+import SelectSearch from '../../components/common/input/select-search.js';
 import CheckBoxInput from '../../components/common/input/checkbox.js';
 import { config } from '../../config';
 import inputErrors from '../../utils/input-errors';
@@ -138,7 +139,7 @@ class Signup extends Component {
                         updateField('email', value, error);
                       }}
                     />
-                    <SelectOption
+                    <SelectSearch
                       required
                       id="country"
                       placeholder="Country of Operation *"
