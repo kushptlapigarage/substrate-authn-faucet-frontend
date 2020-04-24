@@ -75,9 +75,11 @@ class Signup extends Component {
         <FormWrapper>
           <Grid staggered mt="" mb="large">
             <Column>
-              <Box pad="medium" align="start" gap="large">
-                <Box direction="row" wrap align="start" gap="large">
+              <Box pad="medium" align="start" gap="none">
+                <Box direction="row" wrap align="start" gap="xsmall">
                   <Heading margin={{ top: 'none' }} size="small">Welcome to the</Heading>
+                </Box>
+                <Box direction="row" wrap align="start" gap="xsmall">
                   <Heading margin={{ top: 'none' }} size="small">Centrifuge Authenticated Faucet</Heading>
                 </Box>
               </Box>
