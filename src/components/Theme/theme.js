@@ -168,7 +168,7 @@ const custom = {
               border: none; border-radius: 0px !important;
               border-bottom: ${borderWidth}px solid black;
               color: black;
-              height: 100%
+              height: auto;
               width: 100%;`,
     }
   },
