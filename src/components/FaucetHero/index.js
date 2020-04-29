@@ -1,19 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Heading, Paragraph, Button, Box } from 'grommet';
+import { Heading, Paragraph, Button } from 'grommet';
 
 import Grid from '../Grid';
 import Column from '../Column';
 import FullWidthContainer from '../FullWidthContainer';
+import Medium2020_Faucet_img from '../../images/Medium2020_Faucet-19.png';
 
 export default function FaucetHero({ handleGithubLogin, stateError }) {
   return (
     <FullWidthContainer>
       <Grid noMargin pt="50px" pb="50px">
         <Column justifySelf='stretch' span={{ medium: 5, large: 5 }}>
-          <Box pad="xxlarge" background="brand" round="full" alignSelf="center">
-            Centrifuge
-          </Box>
+          <Image src={Medium2020_Faucet_img} />
         </Column>
 
         <Column span={{ medium: 2, large: 2 }} />
@@ -56,5 +55,12 @@ const Content = styled.div`
     @media only screen and (max-width: 768px) {
       text-align: center;
     }
+  }
+`;
+
+const Image = styled.img`
+  @media only screen and (max-width: 768px) {
+    width: 30%;
+    margin: 0 auto;
   }
 `;

@@ -176,10 +176,6 @@ const MenuItem = styled(Item)`
   }
 `;
 
-const SubItem = styled(Item)`
-  display: block;
-  padding: 0.5rem 1rem;
-`;
 
 const MobileBox = styled(Box)`
   background: white;
@@ -205,28 +201,6 @@ class Navigation extends React.Component {
 
   render() {
     return (
-    // <StaticQuery
-    //   query={graphql`
-    //     query {
-    //       allContentfulControlCenterNavigationCta {
-    //         edges {
-    //           node {
-    //             enableNavigationCallToAction
-    //             buttonUrl
-    //             buttonText
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `}
-    //   render={data => {
-    //     const {
-    //       enableNavigationCallToAction,
-    //       buttonText,
-    //       buttonUrl
-    //     } = data.allContentfulControlCenterNavigationCta.edges[0].node;
-
-      //     return (
       <Nav as='nav' role='navigation'>
         <Container>
           <List style={{ display: 'flex', alignItems: 'center' }}>
@@ -247,66 +221,31 @@ class Navigation extends React.Component {
             {/* Desktop Nav */}
             <Dropdowns direction='row' align='center' gap='large'>
               <PaddedItem>
-                <NavLink to='/products/tinlake'>Products</NavLink>
-                <List>
-                  <Item>
-                    <NavLink to='/products/tinlake'>Tinlake</NavLink>
-                    <NavLink to='/products/deep-tier-finance'>
-                            Deep Tier Finance
-                    </NavLink>
-                  </Item>
-                </List>
+                <ExternalNavLink href='https://developer.centrifuge.io/'>
+                  Documentation
+                </ExternalNavLink>
               </PaddedItem>
 
               <PaddedItem>
-                <NavLink to='/technology'>Technology</NavLink>
-                <List>
-                  <Item>
-                    <ExternalNavLink href='https://developer.centrifuge.io/'>
-                            Developer Docs
-                    </ExternalNavLink>
-                    <NavLink to='/technology/contribute'>
-                            Contribute
-                    </NavLink>
-                    <NavLink to='/technology#download'>Download</NavLink>
-                  </Item>
-                </List>
-              </PaddedItem>
-
-              <PaddedItem>
-                <NavLink to='/ecosystem'>Ecosystem</NavLink>
-                <List>
-                  <Item>
-                    <NavLink to='/ecosystem/#use-cases'>
-                            Use Cases
-                    </NavLink>
-                  </Item>
-                </List>
-              </PaddedItem>
-
-              <PaddedItem>
-                <NavLink to='/about'>About</NavLink>
-                <List>
-                  <Item>
-                    <NavLink to='/about/#mission'>Mission</NavLink>
-                  </Item>
-                  <Item>
-                    <NavLink to='/about/#team'>Team</NavLink>
-                  </Item>
-                  <Item>
-                    <NavLink to='/about/#partners'>Partners</NavLink>
-                  </Item>
-                  <Item>
-                    <NavLink to='/careers'>Careers</NavLink>
-                  </Item>
-                </List>
-              </PaddedItem>
-
-              <PaddedItem>
-                <NavLink to='/news'>News</NavLink>
+                <ExternalNavLink href='https://centrifuge.io/'>
+                  About Centrifuge
+                </ExternalNavLink>
               </PaddedItem>
 
               {/* Call To Action */}
+              <Item>
+                <Button
+                  label='Learn More'
+                  href='https://centrifuge.io/getstarted/'
+                  style={{
+                    paddingTop: '5px',
+                    paddingBottom: '5px',
+                    paddingLeft: '30px',
+                    paddingRight: '30px',
+                    fontSize: 14
+                  }}
+                />
+              </Item>
             </Dropdowns>
           </List>
         </Container>
@@ -350,65 +289,21 @@ const MobilePanel = ({ state, toggleFunc }) => (
           >
             <List>
               <MenuItem>
-                <NavLink to='/products/tinlake'>Products</NavLink>
-
-                <SubItem>
-                  <NavLink to='/products/tinlake'>Tinlake</NavLink>
-                </SubItem>
-                <SubItem>
-                  <NavLink to='/products/deep-tier-finance'>
-                    Deep Tier Finance
-                  </NavLink>
-                </SubItem>
+                <ExternalNavLink href='https://developer.centrifuge.io/'>
+                  Documentation
+                </ExternalNavLink>
               </MenuItem>
 
               <MenuItem>
-                <NavLink to='/technology'>Technology</NavLink>
-
-                <SubItem>
-                  <ExternalNavLink href='https://developer.centrifuge.io/'>
-                    Developer Docs
-                  </ExternalNavLink>
-                </SubItem>
-                <SubItem>
-                  <NavLink to='/technology/contribute'>Contribute</NavLink>
-                </SubItem>
-                <SubItem>
-                  <NavLink to='/technology#download'>Download</NavLink>
-                </SubItem>
+                <ExternalNavLink href='https://centrifuge.io/'>
+                  About Centrifuge
+                </ExternalNavLink>
               </MenuItem>
 
               <MenuItem>
-                <NavLink to='/ecosystem'>Ecosystem</NavLink>
-
-                <SubItem>
-                  <NavLink to='/ecosystem/#use-cases'>Use Cases</NavLink>
-                </SubItem>
-              </MenuItem>
-
-              <MenuItem>
-                <NavLink to='/news'>News</NavLink>
-              </MenuItem>
-
-              <MenuItem>
-                <NavLink to='/about'>About</NavLink>
-
-                <SubItem>
-                  <NavLink to='/about/#mission'>Mission</NavLink>
-                </SubItem>
-                <SubItem>
-                  <NavLink to='/about/#team'>Team</NavLink>
-                </SubItem>
-                <SubItem>
-                  <NavLink to='/about/#partners'>Partners</NavLink>
-                </SubItem>
-                <SubItem>
-                  <NavLink to='/careers'>Careers</NavLink>
-                </SubItem>
-              </MenuItem>
-
-              <MenuItem>
-                <NavLink to='/getstarted'>Get Started</NavLink>
+                <ExternalNavLink href='https://centrifuge.io/getstarted/'>
+                  Learn More
+                </ExternalNavLink>
               </MenuItem>
             </List>
           </MobileBox>

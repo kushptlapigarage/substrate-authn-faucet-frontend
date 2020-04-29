@@ -11,6 +11,7 @@ const unstyledLinkStyles = css`
   &:focus {
     text-decoration: underline;
     color : #2762FF;
+    cursor: pointer;
   }
 
   &:active {

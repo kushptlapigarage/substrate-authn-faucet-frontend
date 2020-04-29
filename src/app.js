@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Theme from './components/Theme';
 import Navigation from './components/Navigation';
 import Container from './components/Container';
+import EmailSubscription from './components/EmailSubscription';
 import AppLoader from './components/AppLoader';
 import Footer from './components/Footer';
 import Router from './router/router.container';
@@ -26,6 +27,7 @@ class App extends Component {
               <Router login={login} />
             </div>
           </Container>
+          <EmailSubscription />
           <Footer />
         </Theme>
       </div>
