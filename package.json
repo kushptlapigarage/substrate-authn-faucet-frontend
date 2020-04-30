@@ -36,7 +36,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "rimraf build && node --max-old-space-size=32768  scripts/build.js && npm run addrewritefile",
-    "addrewritefile" : "cp config/_redirects build/_redirects",
+    "addrewritefile": "cp config/_redirects build/_redirects",
     "test": "echo 'no test'",
     "lint": "eslint src/**/*.js",
     "coverage": "node scripts/test.js --coverage"
