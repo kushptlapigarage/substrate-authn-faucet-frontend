@@ -10,6 +10,7 @@ import Container from '../Container';
 import { List, Item } from '../List';
 import { InternalLink, ExternalLink } from '../Links';
 import theme, { breakpoints } from '../Theme/theme';
+import { AxisTheme } from '@centrifuge/axis-theme';
 
 import wordmark from '../../images/centrifuge-wordmark.svg';
 
@@ -201,64 +202,62 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <Nav as='nav' role='navigation'>
-        <Container>
-          <List style={{ display: 'flex', alignItems: 'center' }}>
-            {/* Logo */}
-            <Item style={{ flex: 1 }}>
-              <BrandLink />
-            </Item>
-
-            {/* Mobile Nav Toggle */}
-            <NavButton onClick={this.toggleMobileNav}>
-              {this.state.mobileNavIsOpen ? (
-                <X size={32} />
-              ) : (
-                <Menu size={32} />
-              )}
-            </NavButton>
-
-            {/* Desktop Nav */}
-            <Dropdowns direction='row' align='center' gap='large'>
-              <PaddedItem>
-                <ExternalNavLink href='https://developer.centrifuge.io/'>
-                  Documentation
-                </ExternalNavLink>
-              </PaddedItem>
-
-              <PaddedItem>
-                <ExternalNavLink href='https://centrifuge.io/'>
-                  About Centrifuge
-                </ExternalNavLink>
-              </PaddedItem>
-
-              {/* Call To Action */}
-              <Item>
-                <Button
-                  label='Learn More'
-                  href='https://centrifuge.io/getstarted/'
-                  style={{
-                    paddingTop: '5px',
-                    paddingBottom: '5px',
-                    paddingLeft: '30px',
-                    paddingRight: '30px',
-                    fontSize: 14
-                  }}
-                />
+      <AxisTheme>
+        <Nav as='nav' role='navigation'>
+          <Container>
+            <List style={{ display: 'flex', alignItems: 'center' }}>
+              {/* Logo */}
+              <Item style={{ flex: 1 }}>
+                <BrandLink />
               </Item>
-            </Dropdowns>
-          </List>
-        </Container>
 
-        {/* Mobile Nav */}
-        <MobilePanel
-          state={this.state.mobileNavIsOpen}
-          toggleFunc={this.toggleMobileNav}
-        />
-      </Nav>
-      //     );
-      //   }}
-      // />
+              {/* Mobile Nav Toggle */}
+              <NavButton onClick={this.toggleMobileNav}>
+                {this.state.mobileNavIsOpen ? (
+                  <X size={32} />
+                ) : (
+                  <Menu size={32} />
+                )}
+              </NavButton>
+
+              {/* Desktop Nav */}
+              <Dropdowns direction='row' align='center' gap='large'>
+
+
+                <PaddedItem>
+                  <ExternalNavLink href='https://centrifuge.io/'>
+                  About
+                  </ExternalNavLink>
+                </PaddedItem>
+
+                {/* Call To Action */}
+                <Item>
+                  {/* <AxisTheme> */}
+                  <Button
+                    label='Learn More'
+                    default
+                    href='https://centrifuge.io/getstarted/'
+                    style={{
+                      paddingTop: '5px',
+                      paddingBottom: '5px',
+                      paddingLeft: '30px',
+                      paddingRight: '30px',
+                      fontSize: 14
+                    }}
+                  />
+                  {/* </AxisTheme> */}
+                </Item>
+              </Dropdowns>
+            </List>
+          </Container>
+
+          {/* Mobile Nav */}
+          <MobilePanel
+            state={this.state.mobileNavIsOpen}
+            toggleFunc={this.toggleMobileNav}
+          />
+        </Nav>
+      </AxisTheme>
     );
   }
 }

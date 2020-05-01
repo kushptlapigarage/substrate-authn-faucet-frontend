@@ -14,6 +14,7 @@ import SelectSearch from '../../components/common/input/select-search.js';
 import CheckBoxInput from '../../components/common/input/checkbox.js';
 import { config } from '../../config';
 import inputErrors from '../../utils/input-errors';
+import { AxisTheme } from '@centrifuge/axis-theme';
 
 const FormWrapper = styled.div`
   display: grid;
@@ -197,10 +198,12 @@ class Signup extends Component {
                 </Box>
               </Box>
               <Box pad="medium" align="center" gap="large">
-                <Button
-                  primary
-                  label="Press to Pour"
-                  type='submit'/>
+                <AxisTheme>
+                  <Button
+                    primary
+                    label="Press to Pour"
+                    type='submit'/>
+                </AxisTheme>
               </Box>
               <Box pad={{ top: 'small', left: 'medium' }} align="start" gap="large">
                 <Box direction="row" wrap align="start" gap="small">
@@ -212,7 +215,6 @@ class Signup extends Component {
           </Grid>
         </FormWrapper>
       </form>
-
     );
   }
 }
