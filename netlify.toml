@@ -1,8 +1,7 @@
 [build]
   publish = "build/"
-[context.production]
   command = "npm run build"
-  [context.production.environment]
+[context.production.environment]
     API_HOST = "https://d1fc9ef5.ngrok.io"
     NODE_VERSION = "12.12.0"
     GITHUB_CLIENT_ID='bd96258260f769a56370'
