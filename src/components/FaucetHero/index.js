@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Heading, Paragraph, Button } from 'grommet';
+import { AxisTheme } from '@centrifuge/axis-theme';
 
 import Grid from '../Grid';
 import Column from '../Column';
@@ -9,24 +10,26 @@ import Medium2020_Faucet_img from '../../images/Medium2020_Faucet-19.png';
 
 export default function FaucetHero({ handleGithubLogin, stateError }) {
   return (
-    <FullWidthContainer>
-      <Grid noMargin pt="50px" pb="50px">
-        <Column justifySelf='stretch' span={{ medium: 5, large: 5 }}>
-          <Image src={Medium2020_Faucet_img} />
-        </Column>
+    <AxisTheme>
+      <FullWidthContainer>
+        <Grid noMargin pt="50px" pb="50px">
+          <Column justifySelf='stretch' span={{ medium: 5, large: 5 }}>
+            <Image src={Medium2020_Faucet_img} />
+          </Column>
 
-        <Column span={{ medium: 2, large: 2 }} />
+          <Column span={{ medium: 2, large: 2 }} />
 
-        <Column span={{ medium: 5, large: 5 }} textAlign="center">
-          <Content>
-            <Heading level={1}>{data.heading}</Heading>
-            <Button primary label="Login with Github" onClick={handleGithubLogin}/>
-            <Paragraph style={{ color: 'red' }} pad={{ top: 'xxsmall', left: 'medium' }}>{stateError}</Paragraph>
-            <Paragraph pad={{ top: 'xxsmall', left: 'medium' }}>{data.paragraph}</Paragraph>
-          </Content>
-        </Column>
-      </Grid>
-    </FullWidthContainer>
+          <Column span={{ medium: 5, large: 5 }} textAlign="center">
+            <Content>
+              <Heading level={1}>{data.heading}</Heading>
+              <Button primary label="Login with Github" onClick={handleGithubLogin}/>
+              <Paragraph style={{ color: 'red' }} pad={{ top: 'xxsmall', left: 'medium' }}>{stateError}</Paragraph>
+              <Paragraph pad={{ top: 'xxsmall', left: 'medium' }}>{data.paragraph}</Paragraph>
+            </Content>
+          </Column>
+        </Grid>
+      </FullWidthContainer>
+    </AxisTheme>
   );
 }
 
