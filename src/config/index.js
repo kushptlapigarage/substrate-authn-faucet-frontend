@@ -17,8 +17,6 @@ const config =
   currentEnv === 'production'
     ? prod
     : dev;
-console.log('Process env : ', process.env);
-console.log('The config : ', config);
 
 const baseOptions = {
   url: config.API_HOST,
