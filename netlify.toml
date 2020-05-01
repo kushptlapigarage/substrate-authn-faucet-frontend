@@ -1,6 +1,7 @@
 [build]
   publish = "build/"
   command = "npm run build"
+
 [context.production.environment]
     API_HOST = "https://d1fc9ef5.ngrok.io"
     NODE_VERSION = "12.12.0"
