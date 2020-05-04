@@ -27,5 +27,5 @@ export default function Disclaimer() {
 const data = {
   heading: 'Disclaimer',
   paragraph:
-    'Tinlake is built on top of the Centrifuge protocol. It allows for on-chain borrowing against collateralized loans completely managed by smart contracts. Not only does Tinlake enable Asset Originators to access the growing liquidity in the Decentralized Finance ecosystem, it also enables stablecoin issuers to offer a stable store of value backed by our collateralized loan pools.  Ultimately, Tinlake will become a fully decentralized lending protocol that interoperates with different blockchains and plugs into a variety of funding sources, including a variety of stablecoins.'
+    'This faucet is provided on an "as-is" and "as available" basis. Accordingly, use of this faucet is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind.'
 };

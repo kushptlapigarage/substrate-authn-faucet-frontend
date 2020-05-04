@@ -36,16 +36,15 @@ const BlockExternalLink = () => (
       <FooterExternalLinkItem href="https://medium.com/centrifuge">
         Medium
       </FooterExternalLinkItem>
-      <FooterLinkItem to="/slack">
+      <FooterExternalLinkItem href="https://centrifuge.io/slack">
         Slack
-      </FooterLinkItem>
+      </FooterExternalLinkItem>
       <FooterExternalLinkItem href="https://github.com/centrifuge/">
         GitHub
       </FooterExternalLinkItem>
       <FooterExternalLinkItem href="https://developer.centrifuge.io/">
         Documentation
       </FooterExternalLinkItem>
-      <FooterLinkItem to="/technology#download">Technical papers</FooterLinkItem>
     </List>
   </Item>
 );
@@ -53,10 +52,9 @@ const BlockExternalLink = () => (
 const BlockInternalLink = () => (
   <Item>
     <List>
-      <FooterLinkItem to="/data-privacy-policy">Data Privacy Policy</FooterLinkItem>
-      <FooterLinkItem to="/security">Security</FooterLinkItem>
-      <FooterLinkItem to="/imprint">Imprint</FooterLinkItem>
-      <br/><br/><br/>
+      <FooterExternalLinkItem href="https://centrifuge.io/aboit">About</FooterExternalLinkItem>
+      <FooterExternalLinkItem href="https://centrifuge.io/imprint">Imprint</FooterExternalLinkItem>
+      <br /><br />
       <FooterLinkItem to="/grant">
         <Box direction="row">
           <Image height={42} src={euFlagImage}/>
