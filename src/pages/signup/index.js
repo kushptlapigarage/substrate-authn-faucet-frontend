@@ -19,6 +19,7 @@ import { AxisTheme } from '@centrifuge/axis-theme';
 import Disclaimer from '../../components/Disclaimer';
 import Container from '../../components/Container';
 
+
 const FormWrapper = styled.div`
   display: grid;
   grid-gap: 24px;
