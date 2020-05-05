@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Paragraph, Image } from 'grommet';
+import { Box, Paragraph, Image, Text} from 'grommet';
 
 import { List, Item } from '../List';
 import { ExternalLink, InternalLink } from '../Links';
@@ -65,9 +65,7 @@ const BlockInternalLink = () => (
 );
 
 const BlockHello = () => (
-  <FooterExternalLinkItem href="mailto:hello@centrifuge.io">
-    hello@centrifuge.io
-  </FooterExternalLinkItem>
+  <Text>The Radial Faucet is operated by the Centrifuge Network Foundation. </Text>
 );
 
 const BlockCopyRight = ({ size }) => (
