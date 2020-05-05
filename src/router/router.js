@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-import SecureRoute from './secure-route.container';
+// import SecureRoute from './secure-route.container';
 
 class Router extends Component {
   componentDidMount() {
@@ -26,14 +26,7 @@ class Router extends Component {
           .filter(routes => routes.component)
           .map(
             route =>
-              route.isSecure ? (
-                <SecureRoute
-                  exact
-                  path={route.path}
-                  key={route.name}
-                  component={route.component}
-                />
-              ) : (
+              (
                 <Route
                   exact
                   path={route.path}

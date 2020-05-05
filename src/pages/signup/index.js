@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Heading, Box, Button, Text } from 'grommet';
+import { Heading, Box, Button, Text, CheckBox } from 'grommet';
 import queryString from 'query-string';
 import styled from 'styled-components';
 import { push } from 'connected-react-router';
@@ -11,7 +11,6 @@ import { signupRequest, updateField, getRandomString, setStateError, getCountryL
 import Input from '../../components/common/input/input.js';
 import SelectOption from '../../components/common/input/select.js';
 import SelectSearch from '../../components/common/input/select-search.js';
-import CheckBoxInput from '../../components/common/input/checkbox.js';
 import { config } from '../../config';
 import inputErrors from '../../utils/input-errors';
 import { AxisTheme } from '@centrifuge/axis-theme';
@@ -174,17 +173,19 @@ class Signup extends Component {
               </Box>
 
               <Box wrap pad={{ top: 'medium', left: 'medium' }} align="start" gap="large">
-                <CheckBoxInput
-                  id='toc_and_privacy'
-                  label="You agree to the Terms of Service and the Privacy Policy"
-                  value={form.toc_and_privacy}
-                  isRequired
-                  reset={reset}
-                  forceValidation={forceValidation}
-                  onInputChange={(value, error) => {
-                    updateField('toc_and_privacy', value, error);
-                  }}
-                />
+                <AxisTheme>
+                  <CheckBox
+                    id='toc_and_privacy'
+                    label="You agree to the Terms of Service and the Privacy Policy"
+                    value={form.toc_and_privacy}
+                    isRequired
+                    reset={reset}
+                    forceValidation={forceValidation}
+                    onInputChange={(value, error) => {
+                      updateField('toc_and_privacy', value, error);
+                    }}
+                  />
+                </AxisTheme>
               </Box>
 
               <Box pad={{ top: 'medium', left: 'medium' }} align="start" gap="large">
