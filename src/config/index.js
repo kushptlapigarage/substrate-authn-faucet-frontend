@@ -12,7 +12,6 @@ const prod = {
   REDIRECT_URI: process.env.REACT_APP_REDIRECT_URI, // 'https://centrifuge-demo.netlify.app/github/callback',
   POLKASCAN_URI: process.env.REACT_APP_POLKASCAN_URI //'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
-
 const config =
   currentEnv === 'production'
     ? prod

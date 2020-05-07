@@ -9,3 +9,10 @@
   to = "/"
   status = 200
   force = true
+
+[[redirects]]
+  from = "2/github/callback"
+  to = "/"
+  status = 200
+  force = true
+
