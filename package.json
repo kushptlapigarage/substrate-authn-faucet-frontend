@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@centrifuge/axis-mutiple-select": "^0.3.2-develop.42",
     "@centrifuge/axis-search-select": "^0.3.2-develop.41",
     "@centrifuge/axis-spinner": "^0.3.1",
     "@centrifuge/axis-theme": "^0.3.1",
